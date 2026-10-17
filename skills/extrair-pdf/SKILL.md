@@ -1,6 +1,6 @@
 ---
 name: extrair-pdf
-description: Extract the text of a PDF on the user's computer, scanned pages included. Use when the user asks to read, summarize, analyze, search or quote a PDF file on their machine (a petição, sentença, processo, contrato, laudo), or gives a path ending in .pdf.
+description: Extract a PDF's text on the user's computer, OCR included, to read, summarize or quote it.
 ---
 
 The Extrator PDF para LLM app does the extraction on the user's own computer. Documents never leave
