@@ -1,0 +1,9 @@
+{
+  "name": "extrator-pdf-llm",
+  "displayName": "Extrator PDF para LLM",
+  "version": "1.4.0",
+  "description": "Extrai o texto de PDFs no seu computador, inclusive páginas escaneadas (OCR), usando o Extrator PDF para LLM instalado. Os documentos não saem da máquina.",
+  "author": { "name": "PensoIA", "url": "https://pensoia.com" },
+  "homepage": "https://apps.microsoft.com/detail/9P08Z6RD6SG6",
+  "license": "MIT"
+}

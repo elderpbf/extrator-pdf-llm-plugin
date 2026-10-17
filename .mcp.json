@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "extrator-pdf-llm": {
+      "command": "${LOCALAPPDATA}/Microsoft/WindowsApps/extrator-pdf-llm.exe",
+      "args": ["--mcp"]
+    }
+  }
+}
