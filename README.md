@@ -10,6 +10,10 @@ Instale o Extrator PDF para LLM pela Microsoft Store
 como "resuma o PDF C:\Processos\sentenca.pdf". O Claude chama o Extrator, que grava um .txt ao lado
 do PDF e devolve o texto para a conversa.
 
+No Claude Desktop, adicione a pasta do processo pelo "+" ao lado da caixa de mensagem e peça ao
+Claude pelo nome do arquivo. Um PDF arrastado ou anexado à conversa vai para o Claude, não fica no
+seu computador, e por isso o Extrator não o alcança.
+
 Funciona no Claude Code e nas sessões do Claude Desktop que rodam no seu computador.
 
 ## Dados
