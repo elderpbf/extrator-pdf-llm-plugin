@@ -3,25 +3,9 @@ name: extrair-pdf
 description: Extract a PDF's text on the user's computer, OCR included, to read, summarize or quote it.
 ---
 
-The Extrator PDF para LLM app does the extraction on the user's own computer. Documents never leave
-the machine; only the extracted text reaches this conversation.
-
-1. Get the PDF's absolute path. If the user named a file without a path, ask for it, or look for it
-   in the folder they are working in.
-2. Call the `extract_pdf` tool of the `extrator-pdf-llm` server with that path. Keep the default
-   `mode` (`sidebyside`): it writes the .txt next to the PDF and never touches the PDF. Never pass
-   `mode: replace` unless the user explicitly asked to replace the original, because it sends the
-   PDF to the Recycle Bin.
-3. For a long PDF (hundreds of pages), pass `includeText: false` and read the .txt named in `output`
-   in parts, instead of taking the whole text at once.
-4. Read `status`:
-   - `done`: work from the text. Mention the .txt path once, so the user can find it.
-   - `encrypted`: the PDF is password-protected; ask the user to remove the password and try again.
-   - `failed`: relay `error` in plain words. If it says no account is active, tell the user to open
-     the Extrator PDF para LLM, sign in, and ask again.
-
-If the `extrator-pdf-llm` server is missing or does not start, the app is not installed on this
-computer: tell the user to install it from the Microsoft Store,
-https://apps.microsoft.com/detail/9P08Z6RD6SG6 (Windows only), and sign in. As a fallback when the app is
-installed but the server is unavailable, the same extraction runs in a terminal:
-`extrator-pdf-llm extract "C:\path\file.pdf" --json` prints the summary with the .txt path.
+Call `extract_pdf` (server `extrator-pdf-llm`) with the PDF's absolute Windows path; ask for it if missing.
+- A file attached to the chat is not on the computer: use the attachment, or ask the user to add its folder with "+".
+- Never pass `mode: replace` unless asked: it sends the PDF to the Recycle Bin.
+- Long PDF: `includeText: false`, then read the .txt named in `output` in parts.
+- `encrypted`: ask the user to remove the password. `failed`: relay `error`; if no account is active, tell them to open the Extrator and sign in.
+- Server missing: if a shell is available, run `extrator-pdf-llm extract "<path>" --json` and read the .txt in `output`; otherwise the app is not installed: https://apps.microsoft.com/detail/9P08Z6RD6SG6
